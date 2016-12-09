@@ -4,16 +4,42 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>JusTTravel</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .header {
+            background-image: url(/Images/beach1.jpg);
+            background-size: 100% 100%;
+            
+        }
+        #slogan{
+            color:#006666;
+            font-size:2.5em;
+            font-family: Papyrus, fantasy;
+            width: 100%;
+        }
+        
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+        <!-- <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"> -->
+            <header class ="header">
+                <img alt="Logo" height="100px" width="100px" src="../Images/logogreen.jpg" />
+                <a href="/Forms/Login.aspx">Hello ____</a>
+                <p id="slogan">"Plan less, travel more!"</p>
+                <nav>Menu goes here</nav>
+            </header>
+        <!-- </asp:ContentPlaceHolder> -->
+
+         <section id="MainContent">
+                <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+
+        <footer>Footer goes here</footer>
     </div>
     </form>
 </body>
