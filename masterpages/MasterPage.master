@@ -5,52 +5,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>JusTTravel</title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    
+
     <style type="text/css">
         #header {
             background-image: url(/Images/beach1.jpg);
             background-size: 100% 100%;
         }
-        #slogan{
-            color:#006666;
-            font-size:2.5em;
+
+        #slogan {
+            color: #006666;
+            font-size: 2.5em;
             font-family: Papyrus, fantasy;
             width: 100%;
             text-align: center;
         }
-        #logo{
-            height:100px;
+
+        #logo {
+            height: 100px;
             width: 100px;
         }
-        #login{
-            color:white;
-            font-size:1.6em;
+
+        #login {
+            color: white;
+            font-size: 1.6em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-        
+
+        #footer p {
+            font-size: .6em;
+            display: inline;
+        }
+
+        #footer h5 {
+            font-size: .7em;
+            right: 5em;
+            margin-bottom: 5em;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <!-- <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"> -->
-            <header id ="header">
+        <div>
+            <!-- <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"> -->
+            <header id="header">
                 <img id="logo" alt="Logo" src="../Images/logogreen.jpg" />
                 <a href="/Forms/Login.aspx" id="login">Hello Name</a>
                 <p id="slogan">"Plan less, travel more!"</p>
-                <nav>Breadcrumb trail goes here</nav>   
-                <nav>Menu goes here</nav><br />             
+                <nav>Breadcrumb trail goes here</nav>
+                <nav>Menu goes here</nav>
+                <br />
             </header>
-        <!-- </asp:ContentPlaceHolder> -->
+            <!-- </asp:ContentPlaceHolder> -->
 
-         <section id="MainContent">
+            <section id="MainContent">
                 <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </section>
 
-        <footer>Footer goes here</footer>
-    </div>
+            <footer id="footer">
+                <p><a href="contactus.php">Contact Us</a></p>
+                <p><a href="aboutUs.php">About Us</a></p>
+                <h1>Thanks for visiting!</h1>
+                <h5>&copy; 2016 - Elise Rozenberg and Chaya Turner </h5>
+            </footer>
+        </div>
     </form>
 </body>
 </html>
