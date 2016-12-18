@@ -27,13 +27,54 @@
             width: 100px;
         }
 
-        #login {
-            color: white;
-            font-size: 1.6em;
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        
+
+        .MainMenu {
+            /* The Menu gets a white border on all four sides.*/
+            border: 1px solid white;
+            width: 814px;
+            height: 30px;
+            background-color: #006666;
         }
+
+            .MainMenu ul li {
+                /* Gives the four menu items in the main menu a width of 200px each.*/
+                width: 200px;
+                color: white;
+            }
+
+        ul.level1 {
+            /* Defines the appearance of main menu items. */
+            font-size: 20px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 30px;
+            color: white;
+        }
+
+            ul.level1 .selected {
+                /* Defines the appearance of active menu items. */
+                background-color: #006666;
+            }
+
+        a.level1 {
+            /* Adds some white space to the left of the main menu item text. !important is used to overrule the in-line CSS that the menu generates */
+            padding-left: 5px !important;
+            color: white;
+        }
+
+        a.level2 {
+            /* Defines the appearance of the sub menu items. */
+            background-color: #006666;
+            padding-left: 8px;
+            color: white;
+        }
+
+            a.level1:hover, a.level2:hover {
+                /* Defines the hover style for the main and sub items. */
+                background-color: lightgrey;
+                color: #006666;
+            }
 
         #footer p {
             font-size: .6em;
@@ -45,6 +86,15 @@
             right: 5em;
             margin-bottom: 5em;
         }
+        .userLabel {
+            font-size: 1.2em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+      
+        
     </style>
 </head>
 <body>
@@ -53,22 +103,27 @@
             <!-- <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"> -->
             <header id="header">
                 <img id="logo" alt="Logo" src="../Images/logogreen.jpg" />
-                <a href="/Forms/Login.aspx" id="login">Hello Name</a>
+                <asp:Label ID="userLabel" runat="server" CssClass="userLabel" BackColor="White"></asp:Label>
                 <p id="slogan">"Plan less, travel more!"</p>
-                <nav>Breadcrumb trail goes here</nav>
-                <nav>Menu goes here</nav>
+                <nav>
+                    <asp:Menu ID="Menu1" runat="server" CssClass="MainMenu" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False"></asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                </nav>
                 <br />
             </header>
             <!-- </asp:ContentPlaceHolder> -->
 
             <section id="MainContent">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+                <br />
+                <br />
                 <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </section>
 
-            <footer id="footer">
-                <p><a href="contactus.php">Contact Us</a></p>
-                <p><a href="aboutUs.php">About Us</a></p>
+            <footer id="footer" class="auto-style2">
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">About Us</a></p>
                 <h1>Thanks for visiting!</h1>
                 <h5>&copy; 2016 - Elise Rozenberg and Chaya Turner </h5>
             </footer>

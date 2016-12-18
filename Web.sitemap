@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/" title="Home" description="Home">
+    <siteMapNode url="~/Default/Default" title="Home" description="Go to the homepage" />
+    <siteMapNode url="~/Activities/Default" title="Reviews" description="Activities published on this site">
+      <siteMapNode url="~/Activities/SearchActivities" title="Search Activities" description="Search all Activties" />
+      <siteMapNode url="~/Activities/AddActivities" title="Add Activities" description="AAdd Activities" />
+    </siteMapNode>
+    <siteMapNode url="~/About/Default" title="About" description="About this Site">
+      <siteMapNode url="~/About/Contact" title="Contact Us" description="Contact Us" />
+      <siteMapNode url="~/About/AboutUs" title="About Us" description="About Us" />
+    </siteMapNode>
+    <siteMapNode url="~/Login/Login" title="Login" description="Log into site">
+      <siteMapNode url="~/Login/SignUp" title="Sign Up" description="Sign Up" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
+
