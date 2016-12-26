@@ -12,6 +12,7 @@
     </siteMapNode>
     <siteMapNode url="~/Login/Login" title="Login" description="Log into site">
       <siteMapNode url="~/Login/SignUp" title="Sign Up" description="Sign Up" />
+      <siteMapNode url="~/Administrator/AdminLogin" title="Administrator Login" description="Administrator Login" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>
