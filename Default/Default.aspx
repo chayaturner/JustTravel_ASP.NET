@@ -10,6 +10,10 @@
     <a href="#">Search</a>, and 
     <a href="#">Save</a> activities!</h2>
 
+    <p>Administrator? 
+        <a href="../Administrator/AdminLogin.aspx"> Login here </a>
+    </p>
+
     <p>Where would you like to go next?</p>
     <br />
 
