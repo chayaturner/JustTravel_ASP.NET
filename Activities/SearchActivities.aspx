@@ -3,5 +3,26 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" Runat="Server">
+    <asp:Label ID="Label1" runat="server" Text="Search for Activity:"></asp:Label>
+    <br /><br />
+    <asp:DropDownList ID="SearchDropDownList" runat="server">
+        <asp:ListItem>Search by Name</asp:ListItem>
+        <asp:ListItem>Search by Location</asp:ListItem>
+    </asp:DropDownList>
+    <br /><br />
+    <asp:TextBox ID="SearchTextBox" runat="server"></asp:TextBox>
+    <br /><br />
+    <asp:Button ID="SearchButton" runat="server" Text="Search" />
+    <br /><br />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataSourceID="SqlDataSource1">
+        <Columns>
+            <asp:BoundField HeaderText="Activity Name" />
+            <asp:BoundField HeaderText="Description" />
+            <asp:BoundField HeaderText="State" />
+            <asp:BoundField HeaderText="Address" />
+            <asp:BoundField HeaderText="Contact" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 </asp:Content>
 
