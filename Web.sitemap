@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
   <siteMapNode url="~/" title="Home" description="Home">
     <siteMapNode url="~/Default/Default" title="Home" description="Go to the homepage" />
-    <siteMapNode url="~/Activities/Default" title="Reviews" description="Activities published on this site">
+    <siteMapNode url="~/Activities/Default" title="Activities" description="Activities published on this site">
       <siteMapNode url="~/Activities/SearchActivities" title="Search Activities" description="Search all Activties" />
       <siteMapNode url="~/Activities/AddActivities" title="Add Activities" description="AAdd Activities" />
     </siteMapNode>
