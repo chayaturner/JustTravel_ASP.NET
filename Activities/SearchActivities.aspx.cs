@@ -7,7 +7,12 @@ using System.Web.UI.WebControls;
 
 public partial class Activities_SearchActivities : System.Web.UI.Page
 {
+   
     protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void SearchButton_Click(object sender, EventArgs e)
     {
 
     }

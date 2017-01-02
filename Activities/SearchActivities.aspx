@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" Runat="Server">
-    <asp:Label ID="Label1" runat="server" Text="Search for Activity:"></asp:Label>
+    <p>Search Activities:</p>
     <br /><br />
     <asp:DropDownList ID="SearchDropDownList" runat="server">
         <asp:ListItem>Search by Name</asp:ListItem>
@@ -14,7 +14,7 @@
     <br /><br />
     <asp:Button ID="SearchButton" runat="server" Text="Search" />
     <br /><br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
         <Columns>
             <asp:BoundField HeaderText="Activity Name" />
             <asp:BoundField HeaderText="Description" />
