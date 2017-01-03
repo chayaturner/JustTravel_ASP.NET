@@ -17,7 +17,6 @@
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:JustTravel %>" SelectCommand="SELECT [Rating] FROM [Activity]"></asp:SqlDataSource>
     <br />
-    <br />
     <p>Address:</p>
     <asp:Label ID="Label9" runat="server" Text="Street:"></asp:Label>
     <asp:TextBox ID="StreetTextBox" runat="server"></asp:TextBox>
