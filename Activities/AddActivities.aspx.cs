@@ -10,10 +10,7 @@ public partial class Activities_AddActivities : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Page.IsPostBack == true)
-        {
-            DisplayLabel.Text = ("Successful input");
-        }
+       
     }
      protected void Button1_Click(object sender, EventArgs e){
 
