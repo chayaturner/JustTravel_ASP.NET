@@ -47,7 +47,5 @@ public partial class Activities_SearchActivities : System.Web.UI.Page
         //con.Close();
 
         ResultsLabel.Text = "Search Complete";
-
-        
     }
 }
