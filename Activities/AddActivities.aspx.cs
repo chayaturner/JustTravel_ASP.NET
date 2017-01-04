@@ -18,12 +18,12 @@ public partial class Activities_AddActivities : System.Web.UI.Page
     
     protected void AddButton_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\JustTravel.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\BegASPNET\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
         con.Open();
         
         //get locationID from user state selection:
         String locationName = StateDropDownList.SelectedValue;
-        String locationQuery = "SELECT LocationID FROM Location WHERE StateName = " + locationName;
+        String locationQuery = "SELECT LocationID FROM Location WHERE StateName = '" + locationName + "'";
         SqlCommand getLocationID = con.CreateCommand();
         getLocationID.CommandText = locationQuery;
 
@@ -59,8 +59,6 @@ public partial class Activities_AddActivities : System.Web.UI.Page
 
         cmd2.ExecuteNonQuery();
 
-        //And finally...
-
         //get ContactID that user just inserted:
         String contactQuery = "SELECT ContactID FROM Contact WHERE (ContactName = '"
             + ContactNameTextBox.Text + "' AND ContactEmail = '"
@@ -71,19 +69,31 @@ public partial class Activities_AddActivities : System.Web.UI.Page
         getContactID.CommandText = contactQuery;
         int contactID = ((int)getContactID.ExecuteScalar());
 
+        //run query to insert activity Type
+        SqlCommand cmd3 = new SqlCommand("INSERT into ActivityType(ActivityTypeName) Values (" + ActivityTypeTextBox.Text + ")");
+        cmd3.ExecuteNonQuery();
+
+        //get ActivityTypeID that user just inserted:
+        String typeQuery = "SELECT ActivityTypeID FROM ActivityType WHERE (ActivityTypeName = '" + ActivityTypeTextBox.Text + ")";
+        SqlCommand getTypeID = con.CreateCommand();
+        int typeID = ((int)getTypeID.ExecuteScalar());
+
+        //And finally...
 
         //run query to insert activity
-        SqlCommand cmd3 = new SqlCommand("INSERT into Activity(ActivityName, Description, Rating, ActivityContactID, LocationID, DateCreated) " +
-            "Values (@ActivityName, @Description, @Rating, @ActivityContactID, @LocationID, @DateCreated)", con);
-        cmd3.Parameters.AddWithValue("@ActivityName", NameTextBox.Text);
-        cmd3.Parameters.AddWithValue("@Description", DescriptionTextBox.Text);
-        cmd3.Parameters.AddWithValue("@Rating", RatingDropDownList.SelectedValue);
-        cmd3.Parameters.AddWithValue("@ActivityContactID", contactID);
-        cmd3.Parameters.AddWithValue("@LocationID", locationID);
-        cmd3.Parameters.AddWithValue("@DateCreated", DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
-        cmd3.ExecuteNonQuery();
+        SqlCommand cmd4 = new SqlCommand("INSERT into Activity(ActivityName, Description, ActivityTypeID, Rating, ActivityContactID, LocationID, DateCreated) " +
+            "Values (@ActivityName, @Description, @ActivityTypeID, @Rating, @ActivityContactID, @LocationID, @DateCreated)", con);
+        cmd4.Parameters.AddWithValue("@ActivityName", NameTextBox.Text);
+        cmd4.Parameters.AddWithValue("@Description", DescriptionTextBox.Text);
+        cmd4.Parameters.AddWithValue("@ActivityTypeID", typeID);
+        cmd4.Parameters.AddWithValue("@Rating", RatingDropDownList.SelectedValue);
+        cmd4.Parameters.AddWithValue("@ActivityContactID", contactID);
+        cmd4.Parameters.AddWithValue("@LocationID", locationID);
+        cmd4.Parameters.AddWithValue("@DateCreated", DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
+        cmd4.ExecuteNonQuery();
         
         con.Close();
 
+        Label4.Text = "Add Complete";
     }
 }
