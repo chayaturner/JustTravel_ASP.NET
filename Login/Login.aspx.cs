@@ -11,7 +11,6 @@ public partial class Login_Login : System.Web.UI.Page
     {
         if (Request.Cookies["userInfo"] == null)
         {
-
             LoginForm.Visible = true;
             logout.Visible = false;
             logoutlabel.Visible = false;

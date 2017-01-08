@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" Runat="Server">
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
-            <asp:Login ID="AdminLogin" runat="server" DestinationPageUrl="~/Administrator/Default.aspx">
+            <asp:Login ID="AdminLogin" runat="server" DestinationPageUrl="~/Administrator/Default">
             </asp:Login>
         </AnonymousTemplate>
         <LoggedInTemplate>
