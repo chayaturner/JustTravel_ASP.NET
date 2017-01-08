@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" Runat="Server">
-    <a href="AddActivities">Add Activities </a> 
+    <a href="#">Add Activities </a> 
         or
     <a href="SearchActivities"> Search Activities</a>
 </asp:Content>
