@@ -40,7 +40,6 @@
             <asp:BoundField DataField="LocationID" HeaderText="LocationID" SortExpression="LocationID" />
             <asp:BoundField DataField="TravelFreq" HeaderText="TravelFreq" SortExpression="TravelFreq" />
             <asp:BoundField DataField="UserTypeID" HeaderText="UserTypeID" SortExpression="UserTypeID" />
-            <asp:CommandField ShowInsertButton="True" />
         </Fields>
         <FooterStyle BackColor="White" ForeColor="#1C5E55" />
         <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

@@ -17,27 +17,30 @@ public partial class Controls_LoginForm : System.Web.UI.UserControl
 
     protected void LoginButton_Click(object sender, EventArgs e)
     {
-
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
-        con.Open();
-
-
-        //run query to insert User
-        SqlCommand cmd1 = new SqlCommand("SELECT [Email] FROM [dbo].[User] WHERE Email =" + LoginEmail.Text + " and Password = " + password.Text); //default location for new york
-
-
-        String locationQuery = ("SELECT [Email] FROM [dbo].[User] WHERE [Email] = " + LoginEmail.Text + " and [Password] = " + password.Text); //default location for new york
-        SqlCommand getLocationID = con.CreateCommand();
-        getLocationID.CommandText = locationQuery;
-
-        var locationID = getLocationID.ExecuteScalar();
-
-
-        String result = locationID.ToString();
-        EmailMessage.Text = result;
-
-        con.Close();
-
+        String queryString = "SELECT [Email] FROM [dbo].[User] WHERE [Email] = @Email and [Password] = @Password"; //default location for new york
+        using (SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True")) {
+            SqlCommand command = new SqlCommand(queryString, con);
+            command.Parameters.AddWithValue("@Password", password.Text);
+            command.Parameters.AddWithValue("@Email", LoginEmail.Text);
+            con.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            try
+            {
+                if (reader.HasRows)
+                {
+                    Response.Cookies["userInfo"]["email"] = LoginEmail.Text;
+                    Response.Redirect("../Default/Default");
+                }
+                else{
+                    EmailMessage.Text = "Invalid Login";                 
+                }
+            }
+            finally
+            {
+                // Always call Close when done reading.
+                reader.Close();
+            }
+        }
 
 
         /*

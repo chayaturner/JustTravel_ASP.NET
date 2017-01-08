@@ -18,9 +18,9 @@ public partial class Activities_AddActivities : System.Web.UI.Page
     
     protected void AddButton_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\BegASPNET\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
         con.Open();
-        
+
         //get locationID from user state selection:
         String locationName = StateDropDownList.SelectedValue;
         String locationQuery = "SELECT LocationID FROM Location WHERE StateName = '" + locationName + "'";

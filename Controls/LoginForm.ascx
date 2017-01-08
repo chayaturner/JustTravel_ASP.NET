@@ -51,4 +51,4 @@
         </td>
     </tr>
 </table>
-<asp:Label ID="EmailMessage" runat="server" Text="Logged In" Visible="false" />
+<asp:Label ID="EmailMessage" runat="server" Text="Logged In" Visible="true" ForeColor="Red" />
