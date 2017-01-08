@@ -12,6 +12,10 @@ public partial class Activities_SearchActivities : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.Cookies["userInfo"] == null)
+        {
+            Response.Redirect("~/Login/Login");
+        }
 
     }
     protected void SearchButton_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@
     .ErrorMessage {
         color: Red;
     }
+
     .auto-style3 {
         height: 31px;
     }
@@ -51,4 +52,3 @@
     </tr>
 </table>
 <asp:Label ID="EmailMessage" runat="server" Text="Logged In" Visible="false" />
-

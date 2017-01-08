@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Error404.aspx.cs" Inherits="Errors_Error404" %>
+﻿
+<%--
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Error404.aspx.cs" Inherits="Errors_Error404" %>
 
 <!DOCTYPE html>
 
@@ -19,3 +21,4 @@
     </form>
 </body>
 </html>
+--%>

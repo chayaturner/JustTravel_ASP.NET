@@ -6,5 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="Server">
     <uc1:LoginForm runat="server" ID="LoginForm" />
+    <asp:Label ID="logoutlabel" runat="server" Text="You are logged in already. To log into another account, click on the logout button."></asp:Label>
+    <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" />
 </asp:Content>
 
