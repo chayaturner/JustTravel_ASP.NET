@@ -17,17 +17,20 @@
     <asp:Label ID="Label5" runat="server" Text="Email: "></asp:Label>
     <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
     <br />
+    <!--
     <asp:Label ID="Label6" runat="server" Text="Location: "></asp:Label>
     <asp:DropDownList ID="StateDropDownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="StateName" DataValueField="StateName">
         <asp:ListItem></asp:ListItem>
     </asp:DropDownList>
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:JustTravel %>" SelectCommand="SELECT [StateName] FROM [Location]"></asp:SqlDataSource>
     <br />
-    <asp:Label ID="Label8" runat="server" Text="How often do you travel?: "></asp:Label>
+    -->
+    <asp:Label ID="Label8" runat="server" Text="How often do you travel? Choose: Often, Not Often, or Average: "></asp:Label>
      <asp:TextBox ID="TravelFreqTextBox" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="Button1" runat="server" Text="Sign Up!" OnClick="Button1_Click" />
+    <br />
+    <asp:Label ID="InputLabel" runat="server" Text="."></asp:Label>
 
 
 </asp:Content>
-

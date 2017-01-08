@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.Entity;
 
 public partial class Controls_LoginForm : System.Web.UI.UserControl
 {
@@ -16,6 +17,8 @@ public partial class Controls_LoginForm : System.Web.UI.UserControl
 
     protected void LoginButton_Click(object sender, EventArgs e)
     {
+
+        /*
         if (Page.IsValid)
         {
             Response.Cookies["userInfo"]["email"] = LoginEmail.Text;
@@ -26,5 +29,6 @@ public partial class Controls_LoginForm : System.Web.UI.UserControl
             EmailMessage.Text = "Invalid Loggin";
             EmailMessage.Visible = true;
         }
+        */
     }
 }

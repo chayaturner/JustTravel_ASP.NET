@@ -16,26 +16,31 @@ public partial class Login_SignUp : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\BegASPNET\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
         con.Open();
-        
-        //get locationID from user state selection:
-        String locationName = StateDropDownList.SelectedValue;
-        String locationQuery = "SELECT LocationID FROM Location WHERE StateName = '" + locationName + "'";
-        SqlCommand getLocationID = con.CreateCommand();
-        getLocationID.CommandText = locationQuery;
 
-        int locationID = ((int)getLocationID.ExecuteScalar());
+        //get locationID from user state selection:
+        // String locationName = StateDropDownList.SelectedValue;
+        // String locationQuery = "SELECT LocationID FROM Location WHERE StateName = '" + locationName + "'";
+        //  SqlCommand getLocationID = con.CreateCommand();
+        // getLocationID.CommandText = locationQuery;
+
+        // int locationID = ((int)getLocationID.ExecuteScalar());
+
 
         //run query to insert User
-        SqlCommand cmd1 = new SqlCommand("INSERT into User(Password, FirstName, LastName, Email, LocationID, UserTypeID, TravelFreq) Values(@Password, @FirstName, @LastName, @Email @LocationID, 2, @TravelFreq)", con);
+        SqlCommand cmd1 = new SqlCommand("INSERT INTO [dbo].[User]([Password], [FirstName], [LastName], [Email], [LocationID], [UserTypeID], [TravelFreq]) VALUES (@Password, @FirstName, @LastName, @Email, 31, 2, @TravelFreq)", con); //default location for new york
         cmd1.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
         cmd1.Parameters.AddWithValue("@FirstName", FirstNameTextBox.Text);
         cmd1.Parameters.AddWithValue("@LastName", LastNameTextBox.Text);
         cmd1.Parameters.AddWithValue("@Email", EmailTextBox.Text);
-        cmd1.Parameters.AddWithValue("@LocationID", locationID);
+        //default for now is New York
+        // cmd1.Parameters.AddWithValue("@LocationID", locationID);
         cmd1.Parameters.AddWithValue("@TravelFreq", TravelFreqTextBox.Text);
+
 
         cmd1.ExecuteNonQuery();
 
         con.Close();
+
+        InputLabel.Text = "Successful input.";
     }
 }
