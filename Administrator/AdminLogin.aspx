@@ -8,10 +8,18 @@
             <asp:Login ID="AdminLogin" runat="server" DestinationPageUrl="~/Administrator/Default.aspx">
             </asp:Login>
         </AnonymousTemplate>
+        <LoggedInTemplate>
+            <!-- button for viewing users only appears when admin is logged in -->
+            <asp:Button ID="Button1" runat="server" Text="Admin: View Users" OnClick="Button1_Click" />
+        </LoggedInTemplate>
         <RoleGroups>
             <asp:RoleGroup Roles="Administrator">
             </asp:RoleGroup>
         </RoleGroups>
     </asp:LoginView>
+
+    <br />
+
+    
 </asp:Content>
 

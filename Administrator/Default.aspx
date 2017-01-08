@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="Server">
     <h1>JusTTravel Management Section</h1>
     <p>Welcome to the management section of JusTTravel web site. </p>
-
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="UserID" DataSourceID="SqlDataSource3">
         <Columns>
             <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
