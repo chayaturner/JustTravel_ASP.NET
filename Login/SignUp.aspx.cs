@@ -14,7 +14,7 @@ public partial class Login_SignUp : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\BegASPNET\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\JustTravel_ASP.NET\\App_Data\\JustTravel.mdf;Integrated Security=True");
         con.Open();
 
         //get locationID from user state selection:
@@ -40,7 +40,10 @@ public partial class Login_SignUp : System.Web.UI.Page
         cmd1.ExecuteNonQuery();
 
         con.Close();
+        Response.Cookies["userInfo"]["email"] = EmailTextBox.Text;
 
+        //set cookie and redirect
+        Response.Redirect("../Default/Default");
         InputLabel.Text = "Successful input.";
     }
 }
