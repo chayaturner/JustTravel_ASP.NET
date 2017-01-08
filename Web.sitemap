@@ -6,9 +6,8 @@
       <siteMapNode url="~/Activities/SearchActivities" title="Search Activities" description="Search all Activties" />
       <siteMapNode url="~/Activities/AddActivities" title="Add Activities" description="AAdd Activities" />
     </siteMapNode>
-    <siteMapNode url="~/About/Default" title="About" description="About this Site">
+    <siteMapNode url="~/About/AboutUs" title="About Us" description="About this Site">
       <siteMapNode url="~/About/Contact" title="Contact Us" description="Contact Us" />
-      <siteMapNode url="~/About/AboutUs" title="About Us" description="About Us" />
     </siteMapNode>
     <siteMapNode url="~/Login/Login" title="Login" description="Log into site">
       <siteMapNode url="~/Login/SignUp" title="Sign Up" description="Sign Up" />

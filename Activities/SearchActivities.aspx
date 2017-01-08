@@ -38,10 +38,10 @@
     <asp:Button ID="SearchButton" runat="server" OnClick="SearchButton_Click" Text="Search for Activity" />
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ActivityID" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowEditing="GridView_RowEditing">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ActivityID" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowEditing="GridView_RowEditing" PageSize="5">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+            <asp:CommandField ShowEditButton="True" />
             <asp:BoundField DataField="ActivityID" HeaderText="Activity" InsertVisible="False" ReadOnly="True" SortExpression="ActivityID" />
             <asp:BoundField DataField="ActivityName" HeaderText="Name" SortExpression="ActivityName" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
