@@ -36,6 +36,9 @@
     <asp:DropDownList ID="Location" runat="server" DataSourceID="SqlDataSource6" DataTextField="StateName" DataValueField="LocationID">
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:JustTravel %>" SelectCommand="SELECT [StateName], [LocationID] FROM [Location]"></asp:SqlDataSource>
+    
+    <asp:Label ID="TravelFreqLabel" runat="server" Text="How often do you travel? "></asp:Label>
+
     <asp:RadioButtonList ID="TravelFreqTextBox" runat="server">
         <asp:ListItem Text="Often" Value="Often" />
         <asp:ListItem Text="Average" Value="Average" />

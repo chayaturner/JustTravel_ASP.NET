@@ -21,6 +21,7 @@ public partial class Login_SignUp : System.Web.UI.Page
             EmailTextBox.Visible = false;
             Location.Visible = false;
             TravelFreqTextBox.Visible = false;
+            TravelFreqTextBox.Visible = false;
             Button1.Visible = false;
             Label1.Visible = false;
             Label3.Visible = false;
@@ -37,6 +38,7 @@ public partial class Login_SignUp : System.Web.UI.Page
             Location.Visible = true;
             Button1.Visible = true;
             TravelFreqTextBox.Visible = true;
+            TravelFreqLabel.Visible = true;
             Label1.Visible = true;
             Label3.Visible = true;
             Label4.Visible = true;
